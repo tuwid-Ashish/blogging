@@ -25,6 +25,7 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navLinks = [
     { name: "Home", href: "#" },
+    { name: "Redesign", href: "/redesign" },
     { name: "Trending food", href: "#" },
     { name: "Recipes", href: "#" },
     { name: "World cuisine", href: "#", active: true },
