@@ -64,6 +64,32 @@ export const imageUrls = {
       img: "/images/H15.png"
     }
   ],
+  categories: [
+    { title: "Street Food", img: "/images/H16.png" },
+    { title: "Fast Food", img: "/images/H17.png" },
+    { title: "Vegan Food", img: "/images/H18.png" },
+    { title: "Fried Food", img: "/images/H19.png" },
+    { title: "Desserts", img: "/images/H20.png" },
+    { title: "Snacks", img: "/images/H21.png" },
+    { title: "Breakfast", img: "/images/H22.png" },
+    { title: "Dinner", img: "/images/H23.png" }
+  ],
+  latestNews: [
+    "/images/H24.png",
+    "/images/H25.png",
+    "/images/H26.png",
+    "/images/H27.png",
+    "/images/H28.png",
+    "/images/H29.png",
+    "/images/H30.png",
+    "/images/H31.png",
+    "/images/H32.png",
+    "/images/H33.png",
+    "/images/H34.png",
+    "/images/H35.png",
+    "/images/H36.png",
+    "/images/H37.png"
+  ],
   footer: "/images/H39.png",
   category: "/images/H38.png"
 };

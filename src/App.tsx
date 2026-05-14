@@ -403,6 +403,124 @@ const HealthyGuidesSection = () => {
   );
 };
 
+const ExploreCategorySection = () => {
+  return (
+    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="flex items-center gap-8 w-full mb-16">
+        <h2 className="text-5xl md:text-6xl font-serif uppercase tracking-tight text-[#1a1a1a] whitespace-nowrap">
+          Explore Food By <br />
+          <span className="font-['Playfair_Display'] italic text-brand-primary transform -rotate-2 inline-block ml-32">Category</span>
+        </h2>
+        <div className="flex-1 h-px bg-black/20 mt-12" />
+      </div>
+
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 gap-y-16">
+        {imageUrls.categories.map((cat, i) => (
+          <motion.div 
+            key={i} 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            className="flex flex-col items-center group cursor-pointer"
+          >
+            <div className="w-full aspect-[4/5] md:aspect-square overflow-hidden rounded-full mb-6 relative">
+              <img src={cat.img} alt={cat.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+            </div>
+            <h4 className="text-xl font-serif italic text-brand-primary group-hover:text-black transition-colors">{cat.title}</h4>
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const LatestFromFrycuisineSection = () => {
+  const latestPosts = [
+    { title: "Mexican Tacos Street Food", tag: "Trending Food", date: "Jan 20", desc: "Spicy fillings wrapped in soft tortillas for perfect flavor.", img: imageUrls.latestNews[0], aspect: "aspect-[4/3]" },
+    { title: "Power of Avocado Salad", tag: "Food Facts", date: "Jan 20", desc: "Rich in healthy fats and essential nutrients.", img: imageUrls.latestNews[1], aspect: "aspect-square" },
+    { title: "Chocolate Lava Cake Love", tag: "Famous Food", date: "Jan 20", desc: "Warm molten chocolate dessert loved worldwide.", img: imageUrls.latestNews[2], aspect: "aspect-video" },
+    { title: "Creamy Pasta Alfredo", tag: "Trending Food", date: "Jan 20", desc: "Classic Italian comfort food with rich flavor.", img: imageUrls.latestNews[3], aspect: "aspect-square" },
+    { title: "Spicy Samosa Chaat", tag: "Street Food", date: "Jan 20", desc: "Tangy, spicy, crunchy Indian favorite snack.", img: imageUrls.latestNews[4], aspect: "aspect-[3/4]" },
+    { title: "Cheese Burst Burger", tag: "Trending Food", date: "Jan 20", desc: "Loaded with melted cheese and juicy crispy layers.", img: imageUrls.latestNews[5], aspect: "aspect-square" },
+    { title: "Spicy Chicken Ramen", tag: "Famous Food", date: "Jan 20", desc: "Hot flavorful broth with tender noodles and topping", img: imageUrls.latestNews[6], aspect: "aspect-square" },
+    { title: "Steamed Veg Momos", tag: "Street Food", date: "Jan 20", desc: "Soft dumplings filled with fresh vegetables and spices", img: imageUrls.latestNews[7], aspect: "aspect-video" },
+    { title: "Oats & Fruit Breakfast Bowl", tag: "Diet Tips", date: "Jan 20", desc: "Light, healthy breakfast for better digestion & weight control.", img: imageUrls.latestNews[8], aspect: "aspect-square" },
+    { title: "Sprouts Salad Bowl", tag: "Diet Tips", date: "Jan 20", desc: "Protein-rich sprouts with fresh veggies for a healthy meal.", img: imageUrls.latestNews[9], aspect: "aspect-square" },
+    { title: "Creamy Mushroom Pasta", tag: "Trending Food", date: "Jan 20", desc: "Rich mushroom pasta with herbs for a comforting bite.", img: imageUrls.latestNews[10], aspect: "aspect-[3/4]" },
+    { title: "Loaded Veggie Cheese Sandwich", tag: "Trending Food", date: "Jan 20", desc: "Delicious sandwich with fresh veggies and melted cheese.", img: imageUrls.latestNews[11], aspect: "aspect-[4/3]" },
+    { title: "Dark Chocolate", tag: "Food Facts", date: "Jan 20", desc: "Healthy dark chocolate recipes.", img: imageUrls.latestNews[12], aspect: "aspect-square" },
+    { title: "Hyderabadi Biryani", tag: "Famous Food", date: "Jan 20", desc: "Authentic dum biryani cooked to perfection.", img: imageUrls.latestNews[13], aspect: "aspect-video" },
+  ];
+
+  return (
+    <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      <div className="flex items-center gap-8 w-full mb-16">
+        <h2 className="text-5xl md:text-6xl font-serif text-[#1a1a1a] whitespace-nowrap">
+          Latest from <span className="font-['Playfair_Display'] italic text-brand-primary ml-4">Frycuisine</span>
+        </h2>
+        <div className="flex-1 h-[2px] bg-brand-primary ml-4 opacity-50 relative">
+           <div className="absolute right-0 -top-8 w-32 h-16 border-t-2 border-r-2 border-brand-primary rounded-tr-[100px] opacity-50 transform block" />
+        </div>
+      </div>
+
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
+        {latestPosts.map((post, i) => (
+          <motion.div 
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="break-inside-avoid group cursor-pointer flex flex-col mb-8"
+          >
+            {i === 0 ? (
+              <div className="relative overflow-hidden mb-4 rounded-sm shadow-md">
+                <img src={post.img} alt={post.title} className={`w-full ${post.aspect} object-cover group-hover:scale-105 transition-transform duration-500`} />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
+                  <p className="text-white text-sm font-bold italic tracking-wider mb-2 drop-shadow-lg">{post.tag} , {post.date}</p>
+                  <h3 className="text-white text-2xl font-serif mb-2 drop-shadow-lg">{post.title}</h3>
+                  <p className="text-white/90 text-sm font-sans drop-shadow-md">{post.desc}</p>
+                </div>
+              </div>
+            ) : (
+              <>
+                <div className="overflow-hidden mb-4 rounded-sm shadow-md">
+                  <img src={post.img} alt={post.title} className={`w-full ${post.aspect} object-cover group-hover:scale-105 transition-transform duration-500`} />
+                </div>
+                <div className="flex flex-col">
+                  <p className="text-[#1a1a1a] text-xs font-bold italic tracking-wider mb-1">{post.tag} , {post.date}</p>
+                  <h3 className="text-[#1a1a1a] text-xl font-serif mb-2">{post.title}</h3>
+                  <p className="text-gray-600 text-sm italic font-serif leading-relaxed">{post.desc}</p>
+                </div>
+              </>
+            )}
+          </motion.div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+const WhyChooseUsSection = () => {
+  return (
+    <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto text-center">
+      <div className="flex items-center justify-center gap-2 mb-16">
+        <div className="flex-1 h-px bg-brand-primary opacity-30 hidden md:block" />
+        <h2 className="text-4xl md:text-5xl font-serif font-bold text-[#1a1a1a] px-8">Why Food Lovers Choose FryCuisine</h2>
+        <div className="flex-1 h-px bg-brand-primary opacity-30 hidden md:block" />
+      </div>
+
+      <div className="flex flex-col md:flex-row gap-12 items-center bg-[#fdfdfd] p-8 md:p-12 shadow-lg drop-shadow-xl rounded-xl">
+        <div className="flex-1 w-full relative">
+           <img src={imageUrls.category} alt="Healthy food spread" className="w-full h-[500px] object-cover rounded-md shadow-inner" />
+        </div>
+        <div className="flex-1 text-left space-y-6">
+          <p className="text-[#1a1a1a] leading-loose text-xl font-serif italic">
+            FryCuisine brings you global food coverage in a simple and easy way. From easy recipes and real food guides to trending and viral food updates, everything is shared in a clean and honest style. The content is created to help food lovers explore new dishes, learn quickly, and enjoy authentic food stories without long or complicated text.
+          </p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const Footer = () => {
   const sections = [
     {
@@ -480,13 +598,13 @@ const Footer = () => {
             <div className="relative flex-1">
               <input 
                 type="email" 
-                placeholder="Enter your email..." 
-                className="w-full bg-white text-black py-4 px-12 focus:ring-0 outline-none"
+                placeholder="" 
+                className="w-full bg-white text-black py-4 px-12 rounded focus:ring-0 outline-none"
               />
-              <Search className="absolute left-4 top-4 text-gray-400 w-5 h-5" />
-              <X className="absolute right-4 top-4 text-gray-400 w-5 h-5 cursor-pointer" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-black w-5 h-5" />
+              <X className="absolute right-4 top-1/2 -translate-y-1/2 text-black w-5 h-5 cursor-pointer" />
             </div>
-            <button className="bg-[#ff1e1e] text-white px-8 py-4 uppercase font-bold flex items-center gap-2 justify-center hover:brightness-110 transition-all">
+            <button className="bg-[#ff1e1e] text-white px-8 py-4 rounded uppercase font-bold flex items-center gap-2 justify-center hover:brightness-110 transition-all">
               <Bell className="w-5 h-5" />
               Subscribe
             </button>
@@ -513,36 +631,15 @@ export default function App() {
         <Hero />
         <TrendingSection />
         <WorldFoodSection />
-        
-        {/* About Section Mix */}
         <RecipesSection />
-        
         <HealthyGuidesSection />
 
-        {/* Category Section Inspiration */}
-        {/* <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto text-center border-t border-black/5">
-           <div className="flex items-center justify-center gap-2 mb-4">
-              <h2 className="text-6xl font-serif uppercase tracking-tight">Explore Food By</h2>
-           </div>
-           <div className="flex justify-center -mt-6">
-              <span className="font-['Playfair_Display'] italic text-8xl text-brand-primary transform -rotate-6">Category</span>
-           </div>
-           
-           <div className="h-20" />
+        
+        
+        <ExploreCategorySection />
+        <LatestFromFrycuisineSection />
 
-           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center max-w-5xl mx-auto">
-              <div className="relative group">
-                <img src={imageUrls.category} className="w-full h-96 object-cover shadow-2xl" />
-                <div className="absolute inset-4 border border-white/20 group-hover:inset-6 transition-all duration-500" />
-              </div>
-              <div className="text-left space-y-6">
-                 <h3 className="text-4xl font-serif">Why Food Lovers Choose FryCuisine</h3>
-                 <p className="text-gray-600 leading-relaxed text-lg">
-                    FryCuisine brings you global food coverage in a simple and easy way. From easy recipes and real food guides to trending and viral food updates, everything is shared in a clean and honest style. The content is created to help food lovers explore new dishes, learn quickly, and enjoy authentic food stories without long or complicated text.
-                 </p>
-              </div>
-           </div>
-        </section> */}
+        <WhyChooseUsSection />
       </main>
       <Footer />
     </div>
