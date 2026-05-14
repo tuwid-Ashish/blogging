@@ -432,72 +432,224 @@ const ExploreCategorySection = () => {
     </section>
   );
 };
-
 const LatestFromFrycuisineSection = () => {
   const latestPosts = [
-    { title: "Mexican Tacos Street Food", tag: "Trending Food", date: "Jan 20", desc: "Spicy fillings wrapped in soft tortillas for perfect flavor.", img: imageUrls.latestNews[0], aspect: "aspect-[4/3]" },
-    { title: "Power of Avocado Salad", tag: "Food Facts", date: "Jan 20", desc: "Rich in healthy fats and essential nutrients.", img: imageUrls.latestNews[1], aspect: "aspect-square" },
-    { title: "Chocolate Lava Cake Love", tag: "Famous Food", date: "Jan 20", desc: "Warm molten chocolate dessert loved worldwide.", img: imageUrls.latestNews[2], aspect: "aspect-video" },
-    { title: "Creamy Pasta Alfredo", tag: "Trending Food", date: "Jan 20", desc: "Classic Italian comfort food with rich flavor.", img: imageUrls.latestNews[3], aspect: "aspect-square" },
-    { title: "Spicy Samosa Chaat", tag: "Street Food", date: "Jan 20", desc: "Tangy, spicy, crunchy Indian favorite snack.", img: imageUrls.latestNews[4], aspect: "aspect-[3/4]" },
-    { title: "Cheese Burst Burger", tag: "Trending Food", date: "Jan 20", desc: "Loaded with melted cheese and juicy crispy layers.", img: imageUrls.latestNews[5], aspect: "aspect-square" },
-    { title: "Spicy Chicken Ramen", tag: "Famous Food", date: "Jan 20", desc: "Hot flavorful broth with tender noodles and topping", img: imageUrls.latestNews[6], aspect: "aspect-square" },
-    { title: "Steamed Veg Momos", tag: "Street Food", date: "Jan 20", desc: "Soft dumplings filled with fresh vegetables and spices", img: imageUrls.latestNews[7], aspect: "aspect-video" },
-    { title: "Oats & Fruit Breakfast Bowl", tag: "Diet Tips", date: "Jan 20", desc: "Light, healthy breakfast for better digestion & weight control.", img: imageUrls.latestNews[8], aspect: "aspect-square" },
-    { title: "Sprouts Salad Bowl", tag: "Diet Tips", date: "Jan 20", desc: "Protein-rich sprouts with fresh veggies for a healthy meal.", img: imageUrls.latestNews[9], aspect: "aspect-square" },
-    { title: "Creamy Mushroom Pasta", tag: "Trending Food", date: "Jan 20", desc: "Rich mushroom pasta with herbs for a comforting bite.", img: imageUrls.latestNews[10], aspect: "aspect-[3/4]" },
-    { title: "Loaded Veggie Cheese Sandwich", tag: "Trending Food", date: "Jan 20", desc: "Delicious sandwich with fresh veggies and melted cheese.", img: imageUrls.latestNews[11], aspect: "aspect-[4/3]" },
-    { title: "Dark Chocolate", tag: "Food Facts", date: "Jan 20", desc: "Healthy dark chocolate recipes.", img: imageUrls.latestNews[12], aspect: "aspect-square" },
-    { title: "Hyderabadi Biryani", tag: "Famous Food", date: "Jan 20", desc: "Authentic dum biryani cooked to perfection.", img: imageUrls.latestNews[13], aspect: "aspect-video" },
+    {
+      title: "Mexican Tacos Street Food",
+      tag: "Trending Food",
+      date: "Jan 20",
+      desc: "Spicy fillings wrapped in soft tortillas for perfect flavor.",
+      img: imageUrls.latestNews[0],
+    },
+    {
+      title: "Power of Avocado Salad",
+      tag: "Food Facts",
+      date: "Jan 20",
+      desc: "Rich in healthy fats and essential nutrients.",
+      img: imageUrls.latestNews[1],
+    },
+    {
+      title: "Chocolate Lava Cake Love",
+      tag: "Famous Food",
+      date: "Jan 20",
+      desc: "Warm molten chocolate dessert loved worldwide.",
+      img: imageUrls.latestNews[2],
+    },
+    {
+      title: "Creamy Pasta Alfredo",
+      tag: "Trending Food",
+      date: "Jan 20",
+      desc: "Classic Italian comfort food with rich flavor.",
+      img: imageUrls.latestNews[3],
+    },
+    {
+      title: "Spicy Samosa Chaat",
+      tag: "Street Food",
+      date: "Jan 20",
+      desc: "Tangy, spicy, crunchy Indian favorite snack.",
+      img: imageUrls.latestNews[4],
+    },
+    {
+      title: "Cheese Burst Burger",
+      tag: "Trending Food",
+      date: "Jan 20",
+      desc: "Loaded with melted cheese and juicy crispy layers.",
+      img: imageUrls.latestNews[5],
+    },
+    {
+      title: "Spicy Chicken Ramen",
+      tag: "Famous Food",
+      date: "Jan 20",
+      desc: "Hot flavorful broth with tender noodles and topping",
+      img: imageUrls.latestNews[6],
+    },
+    {
+      title: "Steamed Veg Momos",
+      tag: "Street Food",
+      date: "Jan 20",
+      desc: "Soft dumplings filled with fresh vegetables and spices",
+      img: imageUrls.latestNews[7],
+    },
+    {
+      title: "Oats & Fruit Breakfast Bowl",
+      tag: "Diet Tips",
+      date: "Jan 20",
+      desc: "Light, healthy breakfast for better digestion & weight control.",
+      img: imageUrls.latestNews[8],
+    },
+    {
+      title: "Sprouts Salad Bowl",
+      tag: "Diet Tips",
+      date: "Jan 20",
+      desc: "Protein-rich sprouts with fresh veggies for a healthy meal.",
+      img: imageUrls.latestNews[9],
+    },
+    {
+      title: "Creamy Mushroom Pasta",
+      tag: "Trending Food",
+      date: "Jan 20",
+      desc: "Rich mushroom pasta with herbs for a comforting bite.",
+      img: imageUrls.latestNews[10],
+    },
+    {
+      title: "Loaded Veggie Cheese Sandwich",
+      tag: "Trending Food",
+      date: "Jan 20",
+      desc: "Delicious sandwich with fresh veggies and melted cheese.",
+      img: imageUrls.latestNews[11],
+    },
+    {
+      title: "Dark Chocolate",
+      tag: "Food Facts",
+      date: "Jan 20",
+      desc: "Healthy dark chocolate recipes.",
+      img: imageUrls.latestNews[12],
+    },
+    {
+      title: "Hyderabadi Biryani",
+      tag: "Famous Food",
+      date: "Jan 20",
+      desc: "Authentic dum biryani cooked to perfection.",
+      img: imageUrls.latestNews[13],
+    },
   ];
+
+  const heroPost = latestPosts[0];
+  const sidePost = latestPosts[1];
+  const masonryPosts = latestPosts.slice(2);
 
   return (
     <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+      {/* Heading */}
       <div className="flex items-center gap-8 w-full mb-16">
         <h2 className="text-5xl md:text-6xl font-serif text-[#1a1a1a] whitespace-nowrap">
-          Latest from <span className="font-['Playfair_Display'] italic text-brand-primary ml-4">Frycuisine</span>
+          Latest from{" "}
+          <span className="font-['Playfair_Display'] italic text-brand-primary ml-4">
+            Frycuisine
+          </span>
         </h2>
-        <div className="flex-1 h-[2px] bg-brand-primary ml-4 opacity-50 relative">
-           <div className="absolute right-0 -top-8 w-32 h-16 border-t-2 border-r-2 border-brand-primary rounded-tr-[100px] opacity-50 transform block" />
+
+        <div className="flex-1 h-[2px] bg-brand-primary ml-4 opacity-50 relative hidden md:block">
+          <div className="absolute right-0 -top-8 w-32 h-16 border-t-2 border-r-2 border-brand-primary rounded-tr-[100px] opacity-50" />
         </div>
       </div>
 
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-8 space-y-8">
-        {latestPosts.map((post, i) => (
-          <motion.div 
+      {/* TOP FEATURED GRID */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-8">
+        {/* HERO */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="lg:col-span-2 group cursor-pointer"
+        >
+          <div className="relative overflow-hidden rounded-sm shadow-md h-[520px]">
+            <img
+              src={heroPost.img}
+              alt={heroPost.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-8">
+              <p className="text-white text-sm font-bold italic tracking-wider mb-3">
+                {heroPost.tag} , {heroPost.date}
+              </p>
+
+              <h3 className="text-white text-5xl font-serif leading-tight mb-4">
+                {heroPost.title}
+              </h3>
+
+              <p className="text-white/90 text-xl leading-relaxed max-w-2xl">
+                {heroPost.desc}
+              </p>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* RIGHT FEATURE CARD */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          className="group cursor-pointer"
+        >
+          <div className="overflow-hidden rounded-sm shadow-md mb-4 h-[320px]">
+            <img
+              src={sidePost.img}
+              alt={sidePost.title}
+              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+            />
+          </div>
+
+          <p className="text-xs font-bold italic tracking-wider mb-2">
+            {sidePost.tag} , {sidePost.date}
+          </p>
+
+          <h3 className="text-3xl font-serif mb-3">
+            {sidePost.title}
+          </h3>
+
+          <p className="text-gray-600 text-lg italic font-serif leading-relaxed">
+            {sidePost.desc}
+          </p>
+        </motion.div>
+      </div>
+
+      {/* TRUE MASONRY SECTION */}
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-8">
+        {masonryPosts.map((post, i) => (
+          <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="break-inside-avoid group cursor-pointer flex flex-col mb-8"
+            transition={{ delay: i * 0.05 }}
+            className="break-inside-avoid mb-10 group cursor-pointer"
           >
-            {i === 0 ? (
-              <div className="relative overflow-hidden mb-4 rounded-sm shadow-md">
-                <img src={post.img} alt={post.title} className={`w-full ${post.aspect} object-cover group-hover:scale-105 transition-transform duration-500`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
-                  <p className="text-white text-sm font-bold italic tracking-wider mb-2 drop-shadow-lg">{post.tag} , {post.date}</p>
-                  <h3 className="text-white text-2xl font-serif mb-2 drop-shadow-lg">{post.title}</h3>
-                  <p className="text-white/90 text-sm font-sans drop-shadow-md">{post.desc}</p>
-                </div>
-              </div>
-            ) : (
-              <>
-                <div className="overflow-hidden mb-4 rounded-sm shadow-md">
-                  <img src={post.img} alt={post.title} className={`w-full ${post.aspect} object-cover group-hover:scale-105 transition-transform duration-500`} />
-                </div>
-                <div className="flex flex-col">
-                  <p className="text-[#1a1a1a] text-xs font-bold italic tracking-wider mb-1">{post.tag} , {post.date}</p>
-                  <h3 className="text-[#1a1a1a] text-xl font-serif mb-2">{post.title}</h3>
-                  <p className="text-gray-600 text-sm italic font-serif leading-relaxed">{post.desc}</p>
-                </div>
-              </>
-            )}
+            <div className="overflow-hidden rounded-sm shadow-md mb-4">
+              <img
+                src={post.img}
+                alt={post.title}
+                className="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-700"
+              />
+            </div>
+
+            <div>
+              <p className="text-xs font-bold italic tracking-wider mb-2">
+                {post.tag} , {post.date}
+              </p>
+
+              <h3 className="text-3xl font-serif mb-3 leading-tight">
+                {post.title}
+              </h3>
+
+              <p className="text-gray-600 text-lg italic font-serif leading-relaxed">
+                {post.desc}
+              </p>
+            </div>
           </motion.div>
         ))}
       </div>
     </section>
   );
 };
-
 const WhyChooseUsSection = () => {
   return (
     <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto text-center">
@@ -520,6 +672,7 @@ const WhyChooseUsSection = () => {
     </section>
   );
 };
+
 
 const Footer = () => {
   const sections = [
